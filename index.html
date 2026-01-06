@@ -7,7 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -23,11 +23,11 @@
                     },
                     colors: {
                         qa: {
-                            bg: '#0f172a',      // Slate 900
-                            card: '#1e293b',    // Slate 800
-                            border: '#334155',  // Slate 700
-                            accent: '#10B981',  // Emerald 500 (Seu verde, mais moderno)
-                            text: '#cbd5e1'     // Slate 300
+                            bg: '#0f172a',      
+                            card: '#1e293b',    
+                            border: '#334155',  
+                            accent: '#10B981',  
+                            text: '#cbd5e1'     
                         }
                     }
                 }
@@ -36,12 +36,10 @@
     </script>
 
     <style>
-        /* Efeito de brilho sutil nos cards */
         .tech-card:hover {
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
             border-color: #10B981;
         }
-        /* Estilo para as "Badges" de skill */
         .skill-badge {
             display: flex;
             align-items: center;
@@ -121,28 +119,35 @@
 
                 <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border">
                     <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
-                        <i class="fas fa-database"></i> Dados
+                        <i class="fas fa-database"></i> Dados & Cloud
                     </h3>
                     <div class="flex flex-col gap-3">
                         <div class="skill-badge justify-start"><i class="devicon-postgresql-plain text-blue-400"></i> PostgreSQL</div>
                         <div class="skill-badge justify-start"><i class="devicon-mongodb-plain text-green-500"></i> MongoDB</div>
                         <div class="skill-badge justify-start"><i class="devicon-mysql-plain text-blue-300"></i> MySQL</div>
+                        <div class="skill-badge justify-start"><i class="devicon-amazonwebservices-plain-wordmark text-white"></i> AWS</div>
                     </div>
                 </div>
 
                 <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border md:col-span-3">
                     <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
-                        <i class="fas fa-tools"></i> Ferramentas & DevOps
+                        <i class="fas fa-tools"></i> Ferramentas, QA & DevOps
                     </h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                        <div class="skill-badge justify-center"><i class="devicon-selenium-original text-green-500"></i> Selenium</div>
+                        <div class="skill-badge justify-center"><i class="devicon-cypressio-plain text-gray-200"></i> Cypress</div>
+                        <div class="skill-badge justify-center"><i class="devicon-playwright-plain text-green-500"></i> Playwright</div>
+                        <div class="skill-badge justify-center"><i class="devicon-appium-plain text-purple-500"></i> Appium</div>
+                        
+                        <div class="skill-badge justify-center"><i class="devicon-androidstudio-plain text-green-400"></i> Android Studio</div>
+                        <div class="skill-badge justify-center"><i class="devicon-postman-plain text-orange-500"></i> Postman</div>
+                        <div class="skill-badge justify-center"><i class="devicon-cucumber-plain text-green-500"></i> Cucumber</div>
+                        
                         <div class="skill-badge justify-center"><i class="devicon-docker-plain text-blue-500"></i> Docker</div>
                         <div class="skill-badge justify-center"><i class="devicon-jenkins-line text-gray-200"></i> Jenkins</div>
+                        <div class="skill-badge justify-center"><i class="devicon-sonarqube-plain text-blue-400"></i> SonarQube</div>
                         <div class="skill-badge justify-center"><i class="devicon-git-plain text-orange-500"></i> Git</div>
-                        <div class="skill-badge justify-center"><i class="devicon-cucumber-plain text-green-500"></i> Cucumber</div>
-                        <div class="skill-badge justify-center"><i class="fas fa-bug text-qa-accent"></i> Postman</div>
                         <div class="skill-badge justify-center"><i class="devicon-jira-plain text-blue-400"></i> Jira</div>
-                        <div class="skill-badge justify-center"><i class="devicon-karma-plain text-green-300"></i> Karma</div>
-                        <div class="skill-badge justify-center"><i class="devicon-jasmine-plain text-purple-600"></i> Jasmine</div>
                     </div>
                 </div>
             </div>
