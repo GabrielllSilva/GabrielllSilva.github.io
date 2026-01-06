@@ -1,75 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio Gabriel Silva</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;0,900;1,300;1,700;1,900&display=swap" rel="stylesheet">
-  <!-- Dev Icon Fonts -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
-  <!-- CSS do Projeto -->
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Silva | QA Engineer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        qa: {
+                            bg: '#0f172a',      // Slate 900
+                            card: '#1e293b',    // Slate 800
+                            border: '#334155',  // Slate 700
+                            accent: '#10B981',  // Emerald 500 (Seu verde, mais moderno)
+                            text: '#cbd5e1'     // Slate 300
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Efeito de brilho sutil nos cards */
+        .tech-card:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+            border-color: #10B981;
+        }
+        /* Estilo para as "Badges" de skill */
+        .skill-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(30, 41, 59, 0.5);
+            border: 1px solid #334155;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .skill-badge:hover {
+            background-color: #334155;
+            transform: translateY(-2px);
+        }
+        .skill-badge i { font-size: 1.25rem; }
+    </style>
 </head>
-<body>
-  <main id="container">
-    <aside id="bio-container">
-      <h2>Gabriel Silva</h2>
-      <img id="bio-image" src="img/Foto Perfil.jpg" alt="Gabriel Silva">
-      <p>Olá, meu nome é Gabriel Silva e sou <span class="highlight">Analista de Testes/QA</span>.</p>
-      <p id="welcome-text">Seja bem-vindo!</p>
-      <ul id="social-container">        
-        <li><a href="https://www.linkedin.com/in/gabriel-leite-994471bb" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-        <li><a href="https://www.instagram.com/gabrielleite22/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
-      </ul>
-      <div id="email-container">
-        <ion-icon name="mail-outline"></ion-icon><a href="mailto:gluiz37@gmail.com">gluiz37@gmail.com</a>
-      </div>
-    </aside>
-    <section id="about-container">
-      <h1 id="name">Gabriel Silva</h1>
-      <p id="title"><span class="highlight">Analista de Testes/QA</span></p>
-      <p class="description">Sou um QA especializado em testes automatizados, seja web ou mobile, incluindo automação nos testes de API via postman, gosto de atuar desde a <span class="highlight">definição das regras de negócio e levantamento de requisitos</span> até o <span class="highlight">envio das métricas para ferramentas como sonarqube, jasmine, karma, Jenkins e bamboo</span>.</p>
-      <p class="description">Atuo tanto na parte <span class="highlight">funcional</span> como na <span class="highlight">parte automatizada dos testes</span>. Eu amo tecnologia, estudo todos os dias para me tornar cada vez melhor e executar testes com qualidade.</p>
-      <li><a href="https://github.com/GabrielllSilva" id="btn-projects"><ion-icon name="share-social-outline"></ion-icon> <span>Ver Projetos</span></a></li>
-      <h2 id="skills-section-title">Minhas Skills</h2>
-      <p class="description">Conheça as tecnologias que utilizadas em meus testes:</p>
-      <div id="skills-container">
-        <div class="skills-box">
-          <p class="skills-title">Linguagens</p>
-          <i class="devicon-csharp-plain colored"></i>
-          <i class="devicon-java-plain colored"></i>
-          <i class="devicon-javascript-plain colored"></i>
-          <i class="devicon-ruby-plain colored"></i>
-          <i class="devicon-kotlin-plain colored"></i>
-        </div>        
-        <div class="skills-box">
-          <p class="skills-title">Databases</p>
-          <i class="devicon-mysql-plain colored"></i>
-          <i class="devicon-mongodb-plain colored"></i>
-          <i class="devicon-postgresql-plain colored"></i>
-        </div>
-        <div class="skills-box">
-          <p class="skills-title">Tools</p>
-          <i class="devicon-docker-plain colored"></i>
-          <i class="devicon-visualstudio-plain-wordmark colored"></i>
-          <i class="devicon-visualstudio-plain colored"></i>
-          <i class="devicon-android-plain colored"></i>          
-          <i class="devicon-cucumber-plain colored"></i>          
-          <i class="devicon-karma-plain colored"></i>
-          <i class="devicon-confluence-original colored"></i>
-          <i class="devicon-couchdb-plain colored"></i>
-          <i class="devicon-bitbucket-original-wordmark colored"></i>
-          <i class="devicon-git-plain colored"></i>
-          <i class="devicon-github-original colored"></i>
-          <i class="devicon-jasmine-plain colored"></i>
-          <i class="devicon-jenkins-line colored"></i>
-          <i class="devicon-jira-plain-wordmark colored"></i>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- Ion Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<body class="bg-qa-bg text-white antialiased selection:bg-qa-accent selection:text-qa-bg">
+
+    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+
+        <header class="flex flex-col items-center text-center mb-20 fade-in">
+            <div class="relative group mb-8">
+                <div class="absolute -inset-1 bg-gradient-to-r from-qa-accent to-emerald-700 rounded-full blur opacity-25 group-hover:opacity-60 transition duration-500"></div>
+                <img src="img/Foto Perfil.jpg" alt="Gabriel Silva" class="relative w-40 h-40 rounded-full border-4 border-qa-bg object-cover shadow-2xl">
+                <div class="absolute bottom-2 right-2 w-5 h-5 bg-qa-accent border-4 border-qa-bg rounded-full" title="Disponível"></div>
+            </div>
+
+            <div class="max-w-2xl">
+                <p class="font-mono text-qa-accent text-sm mb-3 tracking-wider bg-qa-card inline-block px-3 py-1 rounded-full border border-qa-border">
+                    &lt;QA Engineer /&gt;
+                </p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Gabriel Silva</h1>
+                
+                <p class="text-qa-text text-lg leading-relaxed mb-8">
+                    Especialista em <span class="text-white font-medium border-b border-qa-accent/50">testes automatizados</span> (Web, Mobile & API). 
+                    Transformo requisitos de negócio em software de qualidade usando pipelines de CI/CD e as melhores práticas de QA.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/GabrielllSilva" target="_blank" class="px-6 py-3 rounded-lg bg-qa-accent text-qa-bg font-bold hover:bg-white transition-all shadow-lg shadow-emerald-900/20 flex items-center gap-2">
+                        <i class="devicon-github-original"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabriel-leite-994471bb" target="_blank" class="px-6 py-3 rounded-lg bg-qa-card border border-qa-border hover:border-qa-accent hover:text-white transition-all flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="mailto:gluiz37@gmail.com" class="px-6 py-3 rounded-lg bg-qa-card border border-qa-border hover:border-qa-accent hover:text-white transition-all flex items-center gap-2">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-qa-border to-transparent mb-16"></div>
+
+        <section>
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <i class="fas fa-microchip text-qa-accent"></i> Tech Stack
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border md:col-span-2">
+                    <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fas fa-code"></i> Linguagens
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="skill-badge"><i class="devicon-java-plain text-orange-400"></i> Java</div>
+                        <div class="skill-badge"><i class="devicon-csharp-plain text-purple-400"></i> C#</div>
+                        <div class="skill-badge"><i class="devicon-javascript-plain text-yellow-400"></i> JavaScript</div>
+                        <div class="skill-badge"><i class="devicon-ruby-plain text-red-500"></i> Ruby</div>
+                        <div class="skill-badge"><i class="devicon-kotlin-plain text-purple-500"></i> Kotlin</div>
+                    </div>
+                </div>
+
+                <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border">
+                    <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fas fa-database"></i> Dados
+                    </h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="skill-badge justify-start"><i class="devicon-postgresql-plain text-blue-400"></i> PostgreSQL</div>
+                        <div class="skill-badge justify-start"><i class="devicon-mongodb-plain text-green-500"></i> MongoDB</div>
+                        <div class="skill-badge justify-start"><i class="devicon-mysql-plain text-blue-300"></i> MySQL</div>
+                    </div>
+                </div>
+
+                <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border md:col-span-3">
+                    <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fas fa-tools"></i> Ferramentas & DevOps
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                        <div class="skill-badge justify-center"><i class="devicon-docker-plain text-blue-500"></i> Docker</div>
+                        <div class="skill-badge justify-center"><i class="devicon-jenkins-line text-gray-200"></i> Jenkins</div>
+                        <div class="skill-badge justify-center"><i class="devicon-git-plain text-orange-500"></i> Git</div>
+                        <div class="skill-badge justify-center"><i class="devicon-cucumber-plain text-green-500"></i> Cucumber</div>
+                        <div class="skill-badge justify-center"><i class="fas fa-bug text-qa-accent"></i> Postman</div>
+                        <div class="skill-badge justify-center"><i class="devicon-jira-plain text-blue-400"></i> Jira</div>
+                        <div class="skill-badge justify-center"><i class="devicon-karma-plain text-green-300"></i> Karma</div>
+                        <div class="skill-badge justify-center"><i class="devicon-jasmine-plain text-purple-600"></i> Jasmine</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-20 text-center text-gray-500 text-sm border-t border-qa-border pt-8">
+            <p>&copy; 2026 Gabriel Silva. Desenvolvido com foco em Qualidade.</p>
+        </footer>
+
+    </main>
 </body>
 </html>
