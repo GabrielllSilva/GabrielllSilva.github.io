@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Silva | QA Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap" rel="stylesheet">
+    <title>GABRIEL SILVA | QA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,89 +12,105 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { gray: { 900: '#111', 50: '#f9fafb' } }
+                    fontFamily: { sans: ['Public Sans', 'sans-serif'] },
+                    boxShadow: { 'hard': '5px 5px 0px 0px rgba(0,0,0,1)' }
                 }
             }
         }
     </script>
+    <style>
+        .brutal-btn {
+            transition: all 0.1s;
+        }
+        .brutal-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px 0px rgba(0,0,0,1);
+        }
+        .brutal-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased selection:bg-black selection:text-white">
+<body class="bg-[#f0f0f0] text-black font-sans p-6">
 
-    <main class="max-w-3xl mx-auto px-6 py-24">
+    <main class="max-w-4xl mx-auto">
         
-        <header class="mb-20">
-            <div class="flex items-start justify-between">
-                <div>
-                    <h1 class="text-4xl font-black tracking-tight mb-2">Gabriel Silva.</h1>
-                    <p class="text-lg text-gray-500">QA Engineer & Test Automation Specialist</p>
+        <div class="bg-white border-4 border-black p-8 mb-8 shadow-hard flex flex-col md:flex-row items-center gap-8">
+            <img src="img/Foto Perfil.jpg" alt="Gabriel" class="w-32 h-32 rounded-full border-4 border-black object-cover bg-yellow-300">
+            <div class="text-center md:text-left flex-1">
+                <div class="inline-block bg-yellow-300 border-2 border-black px-3 py-1 font-bold text-xs mb-2 uppercase tracking-widest">Open to Work</div>
+                <h1 class="text-5xl font-black mb-2 uppercase">Gabriel Silva</h1>
+                <p class="text-xl font-bold text-gray-600 mb-6">Analista de QA & Engenheiro de Testes</p>
+                
+                <div class="flex gap-3 justify-center md:justify-start flex-wrap">
+                    <a href="https://github.com/GabrielllSilva" class="brutal-btn bg-[#FF90E8] border-2 border-black px-6 py-2 font-bold flex items-center gap-2">
+                        <i class="devicon-github-original"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabriel-leite-994471bb" class="brutal-btn bg-[#23A6F0] border-2 border-black px-6 py-2 font-bold text-white flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
                 </div>
-                <img src="img/Foto Perfil.jpg" alt="Gabriel" class="w-20 h-20 rounded-full grayscale hover:grayscale-0 transition duration-500 object-cover">
             </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <p class="mt-8 text-gray-600 leading-relaxed text-lg">
-                Garanto a qualidade de software através de estratégias robustas de automação. 
-                Foco em eliminar bugs antes que eles existam, utilizando pipelines de CI/CD e as melhores práticas de engenharia.
-            </p>
+            <div class="bg-white border-4 border-black p-8 shadow-hard">
+                <h2 class="text-2xl font-black uppercase mb-6 border-b-4 border-black inline-block">Minhas Armas</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold mb-2">Automação Web</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-300 border-2 border-black px-2 py-1 font-bold text-sm">Cypress</span>
+                            <span class="bg-green-300 border-2 border-black px-2 py-1 font-bold text-sm">Selenium</span>
+                            <span class="bg-green-300 border-2 border-black px-2 py-1 font-bold text-sm">Playwright</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold mb-2">Linguagens</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-300 border-2 border-black px-2 py-1 font-bold text-sm">Java</span>
+                            <span class="bg-purple-300 border-2 border-black px-2 py-1 font-bold text-sm">C#</span>
+                            <span class="bg-purple-300 border-2 border-black px-2 py-1 font-bold text-sm">JS</span>
+                        </div>
+                    </div>
 
-            <div class="flex gap-6 mt-8">
-                <a href="https://github.com/GabrielllSilva" class="text-sm font-semibold border-b border-black pb-0.5 hover:text-gray-600 transition">GitHub ↗</a>
-                <a href="https://www.linkedin.com/in/gabriel-leite-994471bb" class="text-sm font-semibold border-b border-black pb-0.5 hover:text-gray-600 transition">LinkedIn ↗</a>
-                <a href="mailto:gluiz37@gmail.com" class="text-sm font-semibold border-b border-black pb-0.5 hover:text-gray-600 transition">Email ↗</a>
-            </div>
-        </header>
-
-        <hr class="border-gray-100 mb-16">
-
-        <section class="mb-20">
-            <h2 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-8">Stack Tecnológico</h2>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-8 gap-x-4">
-                <div>
-                    <h3 class="font-semibold mb-2 text-sm">Linguagens</h3>
-                    <ul class="text-gray-500 text-sm space-y-1">
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>C# / Ruby</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-2 text-sm">Automação</h3>
-                    <ul class="text-gray-500 text-sm space-y-1">
-                        <li>Cypress</li>
-                        <li>Selenium</li>
-                        <li>Playwright</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-2 text-sm">Mobile</h3>
-                    <ul class="text-gray-500 text-sm space-y-1">
-                        <li>Appium</li>
-                        <li>Android Studio</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-2 text-sm">Cloud & Dados</h3>
-                    <ul class="text-gray-500 text-sm space-y-1">
-                        <li>AWS</li>
-                        <li>MongoDB</li>
-                        <li>PostgreSQL</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-semibold mb-2 text-sm">DevOps</h3>
-                    <ul class="text-gray-500 text-sm space-y-1">
-                        <li>Docker</li>
-                        <li>Jenkins</li>
-                        <li>SonarQube</li>
-                    </ul>
+                    <div>
+                        <h3 class="font-bold mb-2">Mobile & Tools</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-orange-300 border-2 border-black px-2 py-1 font-bold text-sm">Appium</span>
+                            <span class="bg-blue-300 border-2 border-black px-2 py-1 font-bold text-sm">Docker</span>
+                            <span class="bg-blue-300 border-2 border-black px-2 py-1 font-bold text-sm">AWS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <footer class="text-gray-400 text-xs">
-            © 2026 Gabriel Silva. 
+            <div class="bg-[#FFC900] border-4 border-black p-8 shadow-hard flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-black uppercase mb-6 border-b-4 border-black inline-block">Sobre Mim</h2>
+                    <p class="font-bold text-lg leading-relaxed">
+                        Não apenas encontro bugs, eu garanto que eles não voltem.
+                        <br><br>
+                        Especialista em criar arquiteturas de testes escaláveis usando BDD e CI/CD. Transformo requisitos complexos em software confiável.
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t-4 border-black">
+                    <a href="mailto:gluiz37@gmail.com" class="text-xl font-black hover:underline flex items-center gap-2">
+                        <i class="fas fa-envelope"></i> gluiz37@gmail.com
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+        <footer class="mt-12 text-center font-bold text-gray-500">
+            2026 Gabriel Silva • <span class="text-black">No Bugs Allowed</span>
         </footer>
+
     </main>
 </body>
 </html>
