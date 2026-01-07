@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Silva | QA Engineer</title>
+    <title>GABRIEL SILVA | SYSTEM_QA</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,17 +17,21 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        cyber: ['Orbitron', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        qa: {
-                            bg: '#0f172a',      
-                            card: '#1e293b',    
-                            border: '#334155',  
-                            accent: '#10B981',  
-                            text: '#cbd5e1'     
+                        neon: {
+                            green: '#00ff41',
+                            blue: '#00f3ff',
+                            purple: '#bc13fe',
+                            bg: '#050505',
+                            card: '#0a0a0a'
                         }
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 12s linear infinite',
                     }
                 }
             }
@@ -36,99 +39,261 @@
     </script>
 
     <style>
-        .tech-card:hover {
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
-            border-color: #10B981;
+        /* Efeitos Visuais Hardcore */
+        body {
+            background-color: #050505;
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
-        .skill-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: rgba(30, 41, 59, 0.5);
-            border: 1px solid #334155;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
+
+        /* Scanline (Linha de monitor antigo) */
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0, 255, 65, 0.04) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: fixed;
+            bottom: 100%;
+            animation: scanline 10s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+
+        /* Glitch Effect no Nome */
+        .glitch {
+            position: relative;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 #bc13fe;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 #00f3ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(12px, 9999px, 5px, 0); }
+            5% { clip: rect(65px, 9999px, 80px, 0); }
+            10% { clip: rect(90px, 9999px, 5px, 0); }
+            100% { clip: rect(10px, 9999px, 30px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(80px, 9999px, 10px, 0); }
+            5% { clip: rect(20px, 9999px, 60px, 0); }
+            10% { clip: rect(5px, 9999px, 30px, 0); }
+            100% { clip: rect(90px, 9999px, 10px, 0); }
+        }
+
+        /* Cyber Cards */
+        .cyber-card {
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid #1f2937;
+            position: relative;
+            overflow: hidden;
             transition: all 0.3s ease;
-            cursor: default;
         }
-        .skill-badge:hover {
-            background-color: #334155;
-            transform: translateY(-2px);
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent 0%, rgba(0, 243, 255, 0.05) 50%, transparent 100%);
+            transform: translateX(-100%);
+            transition: 0.5s;
         }
-        /* Ajuste fino para tamanho dos ícones */
-        .skill-badge i { font-size: 1.25rem; }
+        .cyber-card:hover {
+            border-color: #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+        }
+        .cyber-card:hover::before {
+            transform: translateX(100%);
+        }
+        
+        /* Cursor piscando do terminal */
+        .typing-cursor::after {
+            content: '▋';
+            animation: blink 1s infinite;
+            color: #00ff41;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+        /* Badge Tech */
+        .tech-badge {
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+        }
     </style>
 </head>
-<body class="bg-qa-bg text-white antialiased selection:bg-qa-accent selection:text-qa-bg">
+<body class="text-gray-300 font-mono overflow-x-hidden selection:bg-neon-green selection:text-black">
 
-    <main class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+    <div class="scanline"></div>
 
-        <header class="flex flex-col items-center text-center mb-20 fade-in">
-            <div class="relative group mb-8">
-                <div class="absolute -inset-1 bg-gradient-to-r from-qa-accent to-emerald-700 rounded-full blur opacity-25 group-hover:opacity-60 transition duration-500"></div>
-                <img src="img/Foto Perfil.jpg" alt="Gabriel Silva" class="relative w-40 h-40 rounded-full border-4 border-qa-bg object-cover shadow-2xl">
-                <div class="absolute bottom-2 right-2 w-5 h-5 bg-qa-accent border-4 border-qa-bg rounded-full" title="Disponível"></div>
+    <nav class="fixed top-0 w-full z-50 border-b border-neon-green/20 bg-neon-bg/90 backdrop-blur-sm px-6 py-4 flex justify-between items-center">
+        <div class="text-neon-green font-cyber text-xl tracking-widest animate-pulse-fast">
+            SYSTEM_STATUS: <span class="text-white">ONLINE</span>
+        </div>
+        <div class="hidden md:flex gap-4 text-xs text-neon-blue">
+            <span>CPU: 34%</span>
+            <span>MEM: 12GB</span>
+            <span>NET: CONNECTED</span>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+
+        <section class="flex flex-col md:flex-row items-center gap-12 mb-24">
+            
+            <div class="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                <div class="absolute inset-0 border-2 border-dashed border-neon-green rounded-full animate-spin-slow"></div>
+                <div class="absolute inset-2 border border-neon-blue rounded-full"></div>
+                <img src="img/Foto Perfil.jpg" alt="Gabriel Silva" class="absolute inset-4 w-[calc(100%-32px)] h-[calc(100%-32px)] object-cover rounded-full opacity-90 grayscale hover:grayscale-0 transition duration-500">
             </div>
 
-            <div class="max-w-2xl">
-                <p class="font-mono text-qa-accent text-sm mb-3 tracking-wider bg-qa-card inline-block px-3 py-1 rounded-full border border-qa-border">
-                    &lt;QA Engineer /&gt;
-                </p>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Gabriel Silva</h1>
+            <div class="flex-1 space-y-6">
+                <div class="inline-block px-4 py-1 border border-neon-blue text-neon-blue text-xs tracking-[0.2em] font-cyber uppercase bg-neon-blue/10">
+                    Class: QA_Engineer_Lvl_99
+                </div>
                 
-                <p class="text-qa-text text-lg leading-relaxed mb-8">
-                    Especialista em <span class="text-white font-medium border-b border-qa-accent/50">testes automatizados</span> (Web, Mobile & API). 
-                    Transformo requisitos de negócio em software de qualidade usando pipelines de CI/CD e as melhores práticas de QA.
-                </p>
+                <h1 class="text-5xl md:text-7xl font-cyber font-black text-white glitch" data-text="GABRIEL SILVA">
+                    GABRIEL SILVA
+                </h1>
 
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://github.com/GabrielllSilva" target="_blank" class="px-6 py-3 rounded-lg bg-qa-accent text-qa-bg font-bold hover:bg-white transition-all shadow-lg shadow-emerald-900/20 flex items-center gap-2">
-                        <i class="devicon-github-original"></i> GitHub
+                <div class="bg-black/50 border-l-2 border-neon-green p-4 font-mono text-neon-green h-32 md:h-24">
+                    <span class="text-neon-purple">root@gabriel:~$</span> <span id="typewriter" class="typing-cursor"></span>
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://github.com/GabrielllSilva" target="_blank" class="tech-badge bg-neon-green hover:bg-white text-black font-bold px-8 py-3 transition-all hover:shadow-[0_0_20px_#00ff41]">
+                        <i class="devicon-github-original mr-2"></i> GITHUB_REPO
                     </a>
-                    <a href="https://www.linkedin.com/in/gabriel-leite-994471bb" target="_blank" class="px-6 py-3 rounded-lg bg-qa-card border border-qa-border hover:border-qa-accent hover:text-white transition-all flex items-center gap-2">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:gluiz37@gmail.com" class="px-6 py-3 rounded-lg bg-qa-card border border-qa-border hover:border-qa-accent hover:text-white transition-all flex items-center gap-2">
-                        <i class="fas fa-envelope"></i> Email
+                    <a href="https://www.linkedin.com/in/gabriel-leite-994471bb" target="_blank" class="tech-badge border border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black font-bold px-8 py-3 transition-all">
+                        <i class="fab fa-linkedin mr-2"></i> LINKEDIN_NET
                     </a>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <div class="w-full h-px bg-gradient-to-r from-transparent via-qa-border to-transparent mb-16"></div>
+        <div class="flex items-center gap-4 mb-16 opacity-50">
+            <div class="h-px bg-neon-green flex-1"></div>
+            <div class="text-neon-green font-cyber text-sm tracking-widest">DATABASE_LOADED</div>
+            <div class="h-px bg-neon-green flex-1"></div>
+        </div>
 
         <section>
-            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <i class="fas fa-microchip text-qa-accent"></i> Tech Stack
+            <h2 class="text-3xl font-cyber text-white mb-8 flex items-center gap-3">
+                <span class="text-neon-purple">>></span> INSTALLED_MODULES
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 
-                <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border md:col-span-2">
-                    <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
-                        <i class="fas fa-code"></i> Linguagens
-                    </h3>
+                <div class="cyber-card p-6 md:col-span-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-cyber text-neon-blue text-lg">CORE_LANGUAGES</h3>
+                        <i class="fas fa-code text-gray-600"></i>
+                    </div>
                     <div class="flex flex-wrap gap-3">
-                        <div class="skill-badge"><i class="devicon-java-plain text-orange-400"></i> Java</div>
-                        <div class="skill-badge"><i class="devicon-csharp-plain text-purple-400"></i> C#</div>
-                        <div class="skill-badge"><i class="devicon-javascript-plain text-yellow-400"></i> JavaScript</div>
-                        <div class="skill-badge"><i class="devicon-ruby-plain text-red-500"></i> Ruby</div>
-                        <div class="skill-badge"><i class="devicon-kotlin-plain text-purple-500"></i> Kotlin</div>
+                        <span class="skill-tag border-neon-green text-neon-green"><i class="devicon-java-plain"></i> Java</span>
+                        <span class="skill-tag border-neon-purple text-neon-purple"><i class="devicon-csharp-plain"></i> C#</span>
+                        <span class="skill-tag border-yellow-400 text-yellow-400"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                        <span class="skill-tag border-red-500 text-red-500"><i class="devicon-ruby-plain"></i> Ruby</span>
+                        <span class="skill-tag border-blue-400 text-blue-400"><i class="devicon-kotlin-plain"></i> Kotlin</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border">
-                    <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap-2">
-                        <i class="fas fa-database"></i> Dados & Cloud
-                    </h3>
-                    <div class="flex flex-col gap-3">
-                        <div class="skill-badge justify-start"><i class="devicon-postgresql-plain text-blue-400"></i> PostgreSQL</div>
-                        <div class="skill-badge justify-start"><i class="devicon-mongodb-plain text-green-500"></i> MongoDB</div>
-                        <div class="skill-badge justify-start"><i class="devicon-mysql-plain text-blue-300"></i> MySQL</div>
-                        <div class="skill-badge justify-start"><i class="devicon-amazonwebservices-plain-wordmark text-white"></i> AWS</div>
+                <div class="cyber-card p-6">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-cyber text-neon-blue text-lg">DATA_STORAGE</h3>
+                        <i class="fas fa-database text-gray-600"></i>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition">
+                            <i class="devicon-postgresql-plain text-blue-400"></i> PostgreSQL
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition">
+                            <i class="devicon-mongodb-plain text-green-500"></i> MongoDB
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-gray-400 hover:text-white transition">
+                            <i class="devicon-amazonwebservices-plain-wordmark text-orange-400"></i> AWS Cloud
+                        </div>
                     </div>
                 </div>
 
-                <div class="tech-card bg-qa-card p-6 rounded-2xl border border-qa-border md:col-span-3">
-                    <h3 class="text-sm font-mono text-gray-400 mb-4 uppercase tracking-widest flex items-center gap
+                <div class="cyber-card p-6 md:col-span-3">
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="font-cyber text-neon-blue text-lg">WEAPONRY & TOOLS</h3>
+                        <div class="text-xs text-neon-green animate-pulse">SYSTEM_OPTIMIZED</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div class="tool-box"><i class="devicon-selenium-original text-green-400 text-2xl"></i><span>Selenium</span></div>
+                        <div class="tool-box"><i class="devicon-cypressio-plain text-white text-2xl"></i><span>Cypress</span></div>
+                        <div class="tool-box"><i class="devicon-playwright-plain text-green-500 text-2xl"></i><span>Playwright</span></div>
+                        <div class="tool-box"><i class="devicon-appium-original text-purple-500 text-2xl"></i><span>Appium</span></div>
+                        <div class="tool-box"><i class="devicon-cucumber-plain text-green-600 text-2xl"></i><span>Cucumber</span></div>
+                        
+                        <div class="tool-box border-neon-blue/30"><i class="devicon-docker-plain text-blue-500 text-2xl"></i><span>Docker</span></div>
+                        <div class="tool-box border-neon-blue/30"><i class="devicon-jenkins-line text-white text-2xl"></i><span>Jenkins</span></div>
+                        <div class="tool-box border-neon-blue/30"><i class="devicon-sonarqube-plain text-blue-300 text-2xl"></i><span>SonarQube</span></div>
+                        <div class="tool-box border-neon-blue/30"><i class="devicon-postman-plain text-orange-500 text-2xl"></i><span>Postman</span></div>
+                        <div class="tool-box border-neon-blue/30"><i class="devicon-jira-plain text-blue-600 text-2xl"></i><span>Jira</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="mt-24 text-center border-t border-gray-800 pt-8">
+            <p class="text-gray-600 text-sm font-cyber">
+                SYSTEM_BUILD: 2026.1.0 <span class="text-neon-green">///</span> EXECUTED_BY_GABRIEL
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        const text = "Inicializando protocolos de QA... Carregando testes automatizados... Especialista em quebrar códigos para garantir qualidade.";
+        const speed = 50;
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        
+        // Inicia quando a página carrega
+        window.onload = typeWriter;
+    </script>
+
+    <style>
+        /* Classes Utilitárias Extras */
+        .skill-tag {
+            @apply px-3 py-1 border rounded bg-black/50 text-xs font-bold flex items-center gap-2 hover:bg-white/10 transition cursor-default;
+        }
+        .tool-box {
+            @apply flex flex-col items-center justify-center p-4 border border-gray-800 bg-black/40 hover:border-neon-green hover:bg-neon-green/5 transition-all duration-300 rounded hover:-translate-y-1;
+        }
+        .tool-box span {
+            @apply mt-2 text-xs text-gray-400 font-mono;
+        }
+    </style>
+</body>
+</html>
